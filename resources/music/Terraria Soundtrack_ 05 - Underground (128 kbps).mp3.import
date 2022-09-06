@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Terraria Soundtrack_ 05 - Underground (128 kbps).mp3-c5aba390e5324cea680ce8669b008752.mp3str"
+
+[deps]
+
+source_file="res://resources/music/Terraria Soundtrack_ 05 - Underground (128 kbps).mp3"
+dest_files=[ "res://.import/Terraria Soundtrack_ 05 - Underground (128 kbps).mp3-c5aba390e5324cea680ce8669b008752.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

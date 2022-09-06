@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Different Heaven  EHDE  My Heart NCS Release.mp3-449ef2c2541dc6ac570f7d27ddb79283.mp3str"
+
+[deps]
+
+source_file="res://resources/music/Different Heaven  EHDE  My Heart NCS Release.mp3"
+dest_files=[ "res://.import/Different Heaven  EHDE  My Heart NCS Release.mp3-449ef2c2541dc6ac570f7d27ddb79283.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,286 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://go_back.gd" type="Script" id=1]
+[ext_resource path="res://resources/images/earth1.png" type="Texture" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://resources/images/earth2.png" type="Texture" id=4]
+[ext_resource path="res://resources/images/earth4.png" type="Texture" id=5]
+[ext_resource path="res://resources/images/earth3.png" type="Texture" id=6]
+[ext_resource path="res://resources/images/earth5.png" type="Texture" id=7]
+[ext_resource path="res://resources/images/earth6.png" type="Texture" id=8]
+[ext_resource path="res://main_gameplay.gd" type="Script" id=9]
+[ext_resource path="res://resources/music/hacker sfx.mp3" type="AudioStream" id=10]
+[ext_resource path="res://resources/music/bomb sfx.mp3" type="AudioStream" id=11]
+[ext_resource path="res://resources/images/red_heart.png" type="Texture" id=12]
+[ext_resource path="res://resources/images/home.png" type="Texture" id=13]
+[ext_resource path="res://resources/images/pause.png" type="Texture" id=14]
+[ext_resource path="res://scripts/pause.gd" type="Script" id=15]
+[ext_resource path="res://resources/images/pause2.png" type="Texture" id=16]
+[ext_resource path="res://resources/images/input.png" type="Texture" id=17]
+[ext_resource path="res://resources/images/gray_heart.png" type="Texture" id=18]
+[ext_resource path="res://resources/images/fire1.png" type="Texture" id=19]
+[ext_resource path="res://resources/images/fire2.png" type="Texture" id=20]
+[ext_resource path="res://resources/images/fire3.png" type="Texture" id=21]
+[ext_resource path="res://resources/music/Different Heaven  EHDE  My Heart NCS Release.mp3" type="AudioStream" id=22]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "earth_animation",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 37
+extra_spacing_char = -2
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 457, 450 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 12 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 14 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://resources/fonts/GrapeNuts-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 11 )
+
+[node name="main" type="Node"]
+script = ExtResource( 9 )
+
+[node name="gameplay_node" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="music" type="AudioStreamPlayer" parent="gameplay_node"]
+stream = ExtResource( 22 )
+volume_db = -30.847
+autoplay = true
+
+[node name="animated_earth" type="AnimatedSprite" parent="gameplay_node"]
+position = Vector2( 512, 299 )
+scale = Vector2( 1.02, 1 )
+z_index = -2
+frames = SubResource( 1 )
+animation = "earth_animation"
+frame = 2
+playing = true
+
+[node name="animated_fire1" type="AnimatedSprite" parent="gameplay_node"]
+visible = false
+position = Vector2( 263, 541 )
+scale = Vector2( 0.505208, 0.472826 )
+frames = SubResource( 17 )
+frame = 2
+playing = true
+
+[node name="animated_fire2" type="AnimatedSprite" parent="gameplay_node"]
+visible = false
+position = Vector2( 667, 441 )
+scale = Vector2( 0.505208, 0.472826 )
+frames = SubResource( 17 )
+frame = 2
+playing = true
+
+[node name="animated_fire3" type="AnimatedSprite" parent="gameplay_node"]
+visible = false
+position = Vector2( 780, 539 )
+scale = Vector2( 0.505208, 0.472826 )
+frames = SubResource( 17 )
+frame = 2
+playing = true
+
+[node name="tint_canvas" type="CanvasModulate" parent="gameplay_node"]
+visible = false
+modulate = Color( 0.733333, 0.733333, 0.733333, 1 )
+show_behind_parent = true
+z_index = -3
+z_as_relative = false
+color = Color( 0.45098, 0.45098, 0.45098, 1 )
+
+[node name="pause2" type="Sprite" parent="gameplay_node"]
+visible = false
+position = Vector2( 507.998, 292 )
+scale = Vector2( 0.09375, 0.09375 )
+texture = ExtResource( 16 )
+
+[node name="input_line" type="LineEdit" parent="gameplay_node"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -157.0
+margin_top = -210.0
+margin_right = 169.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_constants/minimum_spaces = 0
+custom_fonts/font = SubResource( 3 )
+custom_styles/read_only = SubResource( 16 )
+align = 1
+max_length = 8
+editable = false
+
+[node name="score_display" type="Label" parent="gameplay_node"]
+margin_left = 10.0
+margin_top = 113.0
+margin_right = 137.0
+margin_bottom = 172.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Score: 0"
+
+[node name="hp_display" type="Label" parent="gameplay_node"]
+margin_left = 18.0
+margin_top = 9.0
+margin_right = 101.0
+margin_bottom = 58.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "HP:"
+
+[node name="gray3" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 204, 27 )
+scale = Vector2( 0.397188, 0.404383 )
+texture = ExtResource( 18 )
+
+[node name="gray2" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 144, 25 )
+scale = Vector2( 0.403571, 0.40625 )
+z_index = 1
+texture = ExtResource( 18 )
+
+[node name="gray1" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 86, 24 )
+scale = Vector2( 0.403571, 0.40625 )
+texture = ExtResource( 18 )
+
+[node name="heart1" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 84, 22 )
+scale = Vector2( 0.403571, 0.40625 )
+z_index = 2
+texture = ExtResource( 12 )
+
+[node name="heart2" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 143, 23 )
+scale = Vector2( 0.403571, 0.40625 )
+z_index = 2
+texture = ExtResource( 12 )
+
+[node name="heart3" type="Sprite" parent="gameplay_node/hp_display"]
+position = Vector2( 203, 24 )
+scale = Vector2( 0.403571, 0.40625 )
+z_index = 2
+texture = ExtResource( 12 )
+
+[node name="highscore_display" type="Label" parent="gameplay_node"]
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 179.0
+margin_bottom = 136.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Highscore: "
+
+[node name="global_timer_display" type="Label" parent="gameplay_node"]
+margin_left = 11.0
+margin_top = 517.0
+margin_right = 176.0
+margin_bottom = 575.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Timer: 0.0"
+
+[node name="home" type="Button" parent="gameplay_node"]
+modulate = Color( 0.839216, 0.839216, 0.839216, 1 )
+margin_left = 935.0
+margin_top = 5.0
+margin_right = 1017.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+flat = true
+script = ExtResource( 1 )
+
+[node name="home" type="Sprite" parent="gameplay_node/home"]
+modulate = Color( 0.658824, 0.658824, 0.658824, 1 )
+position = Vector2( 39, 41.25 )
+scale = Vector2( 0.736, 0.693798 )
+texture = ExtResource( 13 )
+
+[node name="pause" type="Button" parent="gameplay_node"]
+margin_left = 860.0
+margin_top = 11.0
+margin_right = 932.0
+margin_bottom = 78.0
+flat = true
+script = ExtResource( 15 )
+
+[node name="pause" type="Sprite" parent="gameplay_node/pause"]
+modulate = Color( 0.552941, 0.552941, 0.552941, 1 )
+position = Vector2( 37, 34 )
+scale = Vector2( 0.671875, 0.65625 )
+texture = ExtResource( 14 )
+
+[node name="add_score_sfx" type="AudioStreamPlayer" parent="gameplay_node"]
+stream = ExtResource( 10 )
+volume_db = -8.015
+mix_target = 1
+
+[node name="bomb_drops_sfx" type="AudioStreamPlayer" parent="gameplay_node"]
+stream = ExtResource( 11 )
+volume_db = -3.542

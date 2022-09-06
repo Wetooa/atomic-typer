@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hacker sfx.mp3-a80e5e31d00f2504bc6f61361148ac83.mp3str"
+
+[deps]
+
+source_file="res://resources/music/hacker sfx.mp3"
+dest_files=[ "res://.import/hacker sfx.mp3-a80e5e31d00f2504bc6f61361148ac83.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Terraria Music  Day.mp3-1a0714f6291f4b73d62926b284715431.mp3str"
+
+[deps]
+
+source_file="res://resources/music/Terraria Music  Day.mp3"
+dest_files=[ "res://.import/Terraria Music  Day.mp3-1a0714f6291f4b73d62926b284715431.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bomb sfx.mp3-82459930a4b793619274995a2e492759.mp3str"
+
+[deps]
+
+source_file="res://resources/music/bomb sfx.mp3"
+dest_files=[ "res://.import/bomb sfx.mp3-82459930a4b793619274995a2e492759.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
